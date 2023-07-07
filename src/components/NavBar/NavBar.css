@@ -1,0 +1,28 @@
+.NavBar {
+    background-color: black;
+}
+
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.NavBar ul{
+    display: flex;
+    flex-direction: row;
+}
+
+ul li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    margin: 5px 20px;
+    color: white;
+}
+
+a:hover {
+    color: goldenrod;
+}
