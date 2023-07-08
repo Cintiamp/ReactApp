@@ -1,16 +1,22 @@
 .NavBar {
-    background-color: #585252;
+    background-color: white;
 }
 
 .NavBar {
     display: flex;
     flex-direction: row;
+    margin: auto 20px;
+    justify-content: space-around;
     align-items: center;
 }
 
 .NavBar ul{
     display: flex;
     flex-direction: row;
+}
+
+h1 {
+    color: black;
 }
 
 ul li{
@@ -20,7 +26,7 @@ ul li{
 a {
     text-decoration: none;
     margin: 5px 20px;
-    color: white;
+    color: black;
 }
 
 a:hover {
