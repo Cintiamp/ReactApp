@@ -1,8 +1,13 @@
 import './CartWidget.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping }  from "@fortawesome/free-solid-svg-icons";
 
 function CartWidget () {
     return (
-        <img src="https://images.emojiterra.com/twitter/v13.1/512px/1f6d2.png" alt="Carrito de compras" />
+        <div>
+            <FontAwesomeIcon icon={faCartShopping} /> 
+            <span>2</span>
+        </div>
     )
 }
 

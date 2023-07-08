@@ -10,10 +10,12 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <NavBar></NavBar>
+        <NavBar>
+          
+        </NavBar>
 
         <CartWidget></CartWidget>
-        
+
         <ItemListContainer greeting='Bienvenidos a la tienda de Paco Rabanne'/>
        
         
