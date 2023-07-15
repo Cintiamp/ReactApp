@@ -1,0 +1,8 @@
+.btn {
+    padding: 5px 15px;
+    background-color: lightpink;
+}
+
+.btn:hover {
+    background-color: rgb(241, 216, 220);
+}

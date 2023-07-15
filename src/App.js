@@ -1,7 +1,6 @@
 //import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'; 
-import CartWidget from './components/CartWidget/CartWidget.jsx';
 
 function App() {
   
@@ -10,9 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <NavBar>
-          <CartWidget></CartWidget>
-        </NavBar>
+        <NavBar></NavBar>
 
         
 

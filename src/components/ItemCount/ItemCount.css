@@ -1,0 +1,13 @@
+.itemcount {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.containerClicks {
+    width: 50px;
+    height: 60px;
+}
+
+
