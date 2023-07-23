@@ -1,11 +1,15 @@
 import './ButtonComponent.css'
 
 function ButtonComponent (props) {
-    console.log(props)
-    return (
+  
+  const { children } = props
+
+
+  return (
       <div>
-        <button className="btn">{props.label}</button>
-        <small>Soy un botón</small>
+        <button className="btn">
+          {children}
+        </button>
       </div>
     )
   }

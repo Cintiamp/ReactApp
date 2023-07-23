@@ -19,11 +19,11 @@ export default function ClickTracker() {
         <div className='itemcount'>
          
             <button  onClick={handleClickResta}  className='containerClicks'>
-                <h1>-</h1>
+                -
             </button>
                 <h1 className='clicks'>{clicks}</h1>
             <button  onClick={handleClick}  className='containerClicks'>
-                <h1>+</h1>
+                +
             </button>
         
         </div>
