@@ -8,7 +8,7 @@ function ButtonComponent (props) {
   return (
       <div>
         <button className="btn">
-          {children}Comprar
+          {children}
         </button>
       </div>
     )

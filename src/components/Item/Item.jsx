@@ -2,10 +2,11 @@ import React from "react";
 import './Item.css'
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import ClickTracker from '../ItemCount/ItemCount' 
+import { Link } from "react-router-dom";
 
 
 function Item(props) {
-    const { title, description, img, price } = props
+    const { title, description, img, price, id } = props
 
     return (
         <div>
@@ -14,7 +15,9 @@ function Item(props) {
             <img src={img} width="200px" />
             <p>${price}</p>
             <ClickTracker></ClickTracker>
-            <ButtonComponent></ButtonComponent>
+            <Link to={`/product/${id}`}>
+            <ButtonComponent>Ver producto</ButtonComponent>
+            </Link>
         </div>
     )
 }
