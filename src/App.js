@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
 
   
-  
   return (
     <div className="App">
       <BrowserRouter>
@@ -16,7 +15,7 @@ function App() {
           <NavBar></NavBar>
         </header>
         <Routes>
-          <Route path="/products" element={<ItemListContainer greeting='Bienvenidos a la tienda de Paco Rabanne'/>}/>
+          <Route path="/home" element={<ItemListContainer greeting='Bienvenidos a la tienda de Paco Rabanne'/>}/>
           <Route path="/category/:categoryId" element={ <ItemListContainer/> } />
           <Route path="/product/:id" element={ <ItemDetailContainer/> }/>
           <Route path="/home" element={<h1>Página principal</h1>} />

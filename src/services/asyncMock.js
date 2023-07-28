@@ -6,7 +6,7 @@ const productos = [
             description: "EDP",
             img: "../../assets/images/black-xs-femme-edp.jpg",
             price: 51800,
-            category: femme
+            category: "femme"
         },
         {
             title: "Black xs",
@@ -15,7 +15,7 @@ const productos = [
             description: "EDT",
             img: "../../assets/images/black-xs-men-edt.jpg",
             price: 53578,
-            category: men
+            category: "men"
         },
         {
             title: "Fame",
@@ -24,7 +24,7 @@ const productos = [
             description: "EDP",
             img: "../../assets/images/fame-femme-edp.webp",
             price: 65550,
-            category: femme
+            category: "femme"
         },
         {
             title: "Phantom",
@@ -33,7 +33,7 @@ const productos = [
             description: "EDT",
             img: "../../assets/images/phantom-men-edt.png",
             price: 54650,
-            category: men
+            category: "men"
         },
         {
             title: "Olympea",
@@ -42,7 +42,7 @@ const productos = [
             description: "EDP",
             img: "../../assets/images/olympea-femme-edp.png",
             price: 50520,
-            category: femme
+            category: "femme"
         },
         {
             title: "Invictus",
@@ -51,7 +51,7 @@ const productos = [
             description: "EDT",
             img: "../../assets/images/invictus-men-edt.jpg",
             price: 52550,
-            category: men
+            category: "men"
         },
         {
             title: "Lady Million",
@@ -60,7 +60,7 @@ const productos = [
             description: "EDP",
             img: "../../assets/images/lady-million-femme-edp.jpg",
             price: 63150,
-            category: femme
+            category: "femme"
         },
         {
             title: "One Million",
@@ -69,7 +69,7 @@ const productos = [
             description: "EDT",
             img: "../../assets/images/one-million-men-edt.webp",
             price: 53601,
-            category: men
+            category: "men"
         },
         {
             title: "Pure xs",
@@ -78,7 +78,7 @@ const productos = [
             description: "EDP",
             img: "../../assets/images/pure-xs-femme-edp.jpg",
             price: 51800,
-            category: femme
+            category: "femme"
         },
         {
             title: "Pure xs",
@@ -87,7 +87,7 @@ const productos = [
             description: "EDT",
             img: "../../assets/images/pure-xs-men-edt.jpg", 
             price: 44650,
-            category: men
+            category: "men"
         },
     ] 
 
@@ -112,7 +112,13 @@ export function getProductData(idURL) {
 export function getCategoryData(categoryURL) {
 
     return new Promise ( (resolve, reject) => {
-        const categoryRequested = productos.filter
+        const categoryRequested = productos.filter( item => {
+            return (item.category.toLowerCase() === categoryURL.toLowerCase())
+        })
+
+        setTimeout( () => {
+            resolve(categoryRequested)
+        }, 2000)
     })
 }
 
