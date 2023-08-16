@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { getProductData } from "../../services/asyncMock";
+import { getProductData } from "../../services/firebase";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
+
 function ItemDetailContainer() {
     const [product, setProduct] = useState({})
+
     const { id } = useParams()
 
      useEffect(() => {
@@ -16,9 +18,11 @@ function ItemDetailContainer() {
         requestProduct()
      }, [])
 
+     
      return (
         <div>
-            <ItemDetail title={product.title} description={product.description} img={product.img} price={product.price}></ItemDetail>
+            <ItemDetail title={product.title} description={product.description} img={product.img} price={product.price} data={product.data}></ItemDetail>
+            
         </div>
      )
 }

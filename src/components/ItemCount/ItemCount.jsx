@@ -1,9 +1,9 @@
 import './ItemCount.css'
 import React, { useState } from 'react'
 
-export default function ClickTracker() {
-    let stock = 6
-    const [clicks, setClicks] = useState(0)
+export default function ClickTracker({ stock, onAddToCart }) {
+
+    const [clicks, setClicks] = useState(1)
 
     function handleClick() {
         if ( (clicks >= 0) && (clicks < stock) )
@@ -13,6 +13,10 @@ export default function ClickTracker() {
     function handleClickResta() {
         if (clicks > 0 )
         setClicks(clicks - 1)
+    }
+
+    function handleConfirm () {
+        onAddToCart(clicks)
     }
 
     return (
@@ -25,7 +29,12 @@ export default function ClickTracker() {
             <button  onClick={handleClick}  className='containerClicks'>
                 +
             </button>
-        
+
+            <div>
+            <button disabled={ stock === 0 } onClick={handleConfirm}>  
+                Agregar al carrito
+            </button>
+            </div>
         </div>
     )
 }
