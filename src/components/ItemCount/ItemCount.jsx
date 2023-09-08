@@ -1,3 +1,4 @@
+import { click } from '@testing-library/user-event/dist/click'
 import './ItemCount.css'
 import React, { useState } from 'react'
 
@@ -6,17 +7,19 @@ export default function ClickTracker({ stock, onAddToCart }) {
     const [clicks, setClicks] = useState(1)
 
     function handleClick() {
-        if ( (clicks >= 0) && (clicks < stock) )
+        if ( (clicks >= 0) && (clicks < stock) ){
         setClicks(clicks + 1)
+    }
     } 
 
     function handleClickResta() {
-        if (clicks > 0 )
+        if (clicks > 0 ) {
         setClicks(clicks - 1)
+        }
     }
 
     function handleConfirm () {
-        onAddToCart(clicks)
+        onAddToCart(clicks) 
     }
 
     return (

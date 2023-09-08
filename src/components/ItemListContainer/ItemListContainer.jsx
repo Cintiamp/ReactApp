@@ -8,7 +8,7 @@ import { DotSpinner } from '@uiball/loaders'
 
 
 function ItemListContainer() {
-    const [productos, setProducts] = useState([])
+    const [productos, setProducts] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const { categoryId } = useParams()
 
@@ -36,7 +36,7 @@ function ItemListContainer() {
     if (productos.length === 0) {
         return <p>No hay productos disponibles para esa consulta</p>
     }
-
+    
     return (
             <ItemList productos={productos}/>
 )

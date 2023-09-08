@@ -26,7 +26,7 @@ function CartContextProvider(props) {
   }
 
   function removeItem(id) {
-    return null
+    setCart(cart.filter((item) => item.id !== id))
   }
 
   function clearCart() {

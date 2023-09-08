@@ -51,9 +51,9 @@ async function getProductData(id) {
     }
 }
 
-async function getCategoryData() {
+async function getCategoryData(EDP, EDT) {
     const productsRef = collection(db, "products")
-    const q = query(productsRef, where("category", "==", "EDP"))
+    const q = query(productsRef, where("category", "==", EDP, EDT))
     const documentsSnapshot = await getDocs(q)
     const documents = documentsSnapshot.docs
     const docsData = documents.map((item) => { return {...item.data(), id: item.id }})
@@ -270,7 +270,7 @@ async function _exportProductsWithBatch() {
     productos.forEach( producto => {
         const newId = producto.id
         delete producto.id
-        const newDoc = doc(db, "products", '${newId}')
+        const newDoc = doc(db, "products", `${newId}`)
         batch.set(newDoc, producto)
     })
 

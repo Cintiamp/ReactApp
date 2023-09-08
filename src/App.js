@@ -5,12 +5,10 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './context/cartContext';
 import CartContainer from './components/CartContainer/CartContainer';
-import { _exportProductsWithBatch } from './services/firebase';
 import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
-  _exportProductsWithBatch()
 
   return (
     <div className="App">
@@ -21,7 +19,7 @@ function App() {
           </header>
           <main>
           <Routes>
-            <Route path="/home" element={<ItemListContainer greeting='Bienvenidos a la tienda de Paco Rabanne' />} />
+            <Route path="/home" element={<ItemListContainer />} />
             <Route path="/category/:categoryId" element={<ItemListContainer />} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/home" element={<h1>Página principal</h1>} />
@@ -31,6 +29,7 @@ function App() {
             <Route path='/cart' element={ <CartContainer/> }></Route>
             <Route path='/checkout' element={<Checkout/>}></Route>
             <Route path="*" element={<h1>Page not found: 404</h1>} />
+            <Route path='/order/:orderID' element={<p>Gracias por tu compra</p>}/>
           </Routes>
           </main> 
         </BrowserRouter>
